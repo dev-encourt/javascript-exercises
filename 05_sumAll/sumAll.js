@@ -1,8 +1,14 @@
 const sumAll = function(startNum, endNum) {
     let sum = 0;
 
-    if (startNum > endNum || startNum < 0 || endNum < 0 || typeof startNum !== 'number' || typeof endNum !== 'number') {
+    if (startNum < 0 || endNum < 0 || typeof startNum !== 'number' || typeof endNum !== 'number') {
         return 'ERROR';
+    }
+
+    if (startNum > endNum) {
+        let temp = startNum;
+        startNum = endNum;
+        endNum = temp;
     }
 
     for (let i = startNum; i <= endNum; i++) {
